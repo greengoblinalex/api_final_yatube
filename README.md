@@ -1,4 +1,4 @@
-# Api Final Yatube
+# Api Yatube
 
 ## Описание
 
@@ -31,3 +31,8 @@ http://127.0.0.1:8000/api/v1/posts/
     "text": "example text..."
 }
 ```
+
+## Документация
+
+1. Перейдя по данной ссылке, после запуска проекта, можно посмотреть документацию `http://127.0.0.1:8000/redoc/`
+2. Также можно найти redoc.yaml по данному пути `/api_final_yatube/yatube_api/static/redoc.yaml` 
