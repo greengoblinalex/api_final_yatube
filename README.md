@@ -1,4 +1,4 @@
-<h1 align="center">Всем привет! Меня зовут <a href="https://github.com/greengoblinalex" target="_blank">Алексей</a>. Я автор данного приложения
+<h1 align="center">Всем привет! Меня зовут <a href="https://github.com/greengoblinalex" target="_blank">Алексей</a> и я автор данного приложения
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 
 # Api Yatube
