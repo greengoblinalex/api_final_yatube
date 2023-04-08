@@ -1,9 +1,9 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, filters, permissions
-from rest_framework.exceptions import ValidationError
+from rest_framework import mixins
 from rest_framework.pagination import LimitOffsetPagination
 
-from posts.models import Post, Group, Comment, Follow, User
+from posts.models import Post, Group, Follow, User
 from .serializers import (PostSerializer, GroupSerializer,
                           CommentSerializer, FollowSerializer)
 from .permissions import IsOwnerOrReadOnly
@@ -26,7 +26,6 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = (IsOwnerOrReadOnly,)
 
@@ -43,7 +42,8 @@ class CommentViewSet(viewsets.ModelViewSet):
         )
 
 
-class FollowViewSet(viewsets.ModelViewSet):
+class FollowViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
+                    viewsets.GenericViewSet):
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     filter_backends = (filters.SearchFilter,)
@@ -55,12 +55,6 @@ class FollowViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         user = get_object_or_404(
             User, username=self.request.data.get('following'))
-
-        if Follow.objects.filter(user=self.request.user,
-                                 following=user).exists():
-            raise ValidationError('Вы уже подписаны на данного пользователя')
-        if user == self.request.user:
-            raise ValidationError('Вы не можете подписаться на самого себя')
 
         serializer.save(
             user=self.request.user,

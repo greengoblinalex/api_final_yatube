@@ -46,6 +46,22 @@ class FollowSerializer(serializers.ModelSerializer):
         model = Follow
         read_only_fields = ('user',)
 
+    def validate(self, data):
+        user = data.get('following')
+
+        if user == self.context['request'].user:
+            raise serializers.ValidationError(
+                'Вы не можете подписаться на самого себя'
+            )
+
+        if Follow.objects.filter(user=self.context['request'].user,
+                                 following=user).exists():
+            raise serializers.ValidationError(
+                'Вы уже подписаны на данного пользователя'
+            )
+
+        return data
+
 
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
