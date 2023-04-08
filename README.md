@@ -1,6 +1,6 @@
 <h1 align="center">Всем привет! Меня зовут<a href="https://github.com/greengoblinalex" target="_blank"> greengoblinalex</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-#<h3 align="center">Я автор данного приложения</h3>
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Я+автор+данного+приложения)](https://git.io/typing-svg)
 
 # Api Yatube
 
