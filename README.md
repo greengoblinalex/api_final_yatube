@@ -1,3 +1,6 @@
+<h1 align="center">Всем привет! Меня зовут <a href="https://github.com/greengoblinalex" target="_blank">Алексей</a> и я автор данного приложения
+<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+
 # Api Yatube
 
 ## Описание
@@ -36,8 +39,3 @@ http://127.0.0.1:8000/api/v1/posts/
 
 1. Перейдя по данной ссылке, после запуска проекта, можно посмотреть документацию `http://127.0.0.1:8000/redoc/`
 2. Также можно найти `redoc.yaml` по данному пути `/api_final_yatube/yatube_api/static/redoc.yaml` 
-
-## Автор
-
-<h1 align="center">Привет всем! Меня зовут<a href="https://daniilshat.ru/" target="_blank">greengoblinalex</a> 
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
